@@ -24,21 +24,22 @@ public class appUssers implements UsuarioDao {
     @Autowired
     appMongo db; //Acceso bd
 
-    //Get All
-    //ResponseEntity<?> : metodo de tipo Http
-    @GetMapping("allUsser")
-    public ResponseEntity<?> getAllUsrs(){        //@RequestBody : Toma como parametro el request o info desde el lado del cliente, para despues almacenar en la clase ussers 
-        try {
-           List<usserModel> getAllUsers = db.findAll(); 
-            return new ResponseEntity<List<usserModel>>(getAllUsers,HttpStatus.CREATED);
+    //GET all
+    @Override
+    @GetMapping("/get")
+    public ResponseEntity<?> getAllusu() {
+        try { 
+            List<usserModel> getAllUsers = db.findAll(); 
+            return new ResponseEntity<List<usserModel>>(getAllUsers,HttpStatus.CREATED);   
         } catch (Exception e) {
             return new ResponseEntity<String>(e.getCause().toString(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    //POST
-    @PostMapping
-    public ResponseEntity<?> addUsser(@RequestBody usserModel usu){     //Resive el request del lado cliente
+    //POST 
+    @Override
+    @PostMapping("addUsu")
+    public ResponseEntity<?> addUsu(@RequestBody usserModel usu) {
         try {
             usserModel addUsu = db.save(usu);             // Instancia de la clase usuarios
             return new ResponseEntity<usserModel>(addUsu,HttpStatus.CREATED);
@@ -47,49 +48,22 @@ public class appUssers implements UsuarioDao {
         }
     }
 
-    //DELETE
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteUsser(@PathVariable("id") String id){
-        try {
-            db.deleteById(id);
-            return new ResponseEntity<String>("Delete Ok!",HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<String>(e.getCause().toString(),HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @GetMapping("pr")
-    public String pruebas(){
-        return "Hola a la verga";
-    }
-
-    @Override
-    public ResponseEntity<?> getAllusu() {
-        try {
-            List<usserModel> getAll = db.findAll();
-            
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllusu'");
-    }
-
-    @Override
-    public ResponseEntity<?> addUsu() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addUsu'");
-    }
-
+    //PUT 
     @Override
     public ResponseEntity<?> UpdateUsu() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'UpdateUsu'");
     }
 
+    //DELETE
     @Override
-    public ResponseEntity<?> DeleteUsu() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'DeleteUsu'");
+    @DeleteMapping("dltUsu/{id}")
+    public ResponseEntity<?> DeleteUsu(@PathVariable("id") String id) {
+        try {
+            db.deleteById(id);
+            return new ResponseEntity<String>("Delete Ok!",HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<String>(e.getCause().toString(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

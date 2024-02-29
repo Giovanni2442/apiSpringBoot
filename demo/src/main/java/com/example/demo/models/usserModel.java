@@ -23,9 +23,9 @@ public class usserModel {
     @Getter @Setter
     private String email;
     @Getter @Setter
-    private long tel;
+    private String tel;
 
-    public usserModel(int id, String name, String lstnF, String lstnM, int ege, String email, long tel) {
+    public usserModel(int id, String name, String lstnF, String lstnM, int ege, String email, String tel) {
         this.id = id;
         this.name = name;
         this.lstnF = lstnF;
