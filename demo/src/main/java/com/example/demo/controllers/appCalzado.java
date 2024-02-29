@@ -20,6 +20,8 @@ public class appCalzado implements CalzadoDao{
     @Autowired
     appMongoClzd db;
 
+
+    
     @Override
     @GetMapping("get")
     public ResponseEntity<?> getAll() {
