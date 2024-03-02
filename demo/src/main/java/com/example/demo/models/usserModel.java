@@ -23,15 +23,21 @@ public class usserModel {
     @Getter @Setter
     private String email;
     @Getter @Setter
+    private String pass;
+    @Getter @Setter
     private String tel;
 
-    public usserModel(int id, String name, String lstnF, String lstnM, int ege, String email, String tel) {
+    
+    public usserModel(int id, String name, String lstnF, String lstnM, int ege, String email, String pass, String tel) {
         this.id = id;
         this.name = name;
         this.lstnF = lstnF;
         this.lstnM = lstnM;
         this.ege = ege;
         this.email = email;
+        this.pass = pass;
         this.tel = tel;
     }
+
+    
 }

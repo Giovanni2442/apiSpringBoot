@@ -10,7 +10,7 @@ function addUsser(){
         
 
     //---SHOW USSERS IN TABLE---
-    document.addEventListener("DOMContentLoaded",showUssers(`http://127.0.0.1:4000/usser`));
+    document.addEventListener("DOMContentLoaded",showUssers(`http://127.0.0.1:8080/usser`));
     
     //---SUBMIT---
     document.addEventListener("submit", async(e) =>{ 
@@ -38,8 +38,8 @@ function addUsser(){
                             "lastnF" : data.lastF.value,
                             "lastnM" : data.lastM.value,
                             "age" : data.age.value,
-                            "city" : data.cty.value,
-                            "email" : data.eml.value
+                            "email" : data.email.value,
+                            "pass" : data.pass.value
                         })
                     };
 
@@ -48,7 +48,7 @@ function addUsser(){
                         icon: "success"
                       }).then((isOk) => {
                         if(isOk){
-                            sendUsser("http://127.0.0.1:8080/usser/addUsu",POST_request);
+                            sendUsser("http://127.0.0.1:8080/usser",POST_request);
                         }
                       })
                 };
@@ -62,12 +62,12 @@ function addUsser(){
                         "lastnF" : data.lastF.value,
                         "lastnM" : data.lastM.value,
                         "age" : data.age.value,
-                        "city" : data.cty.value,
-                        "email" : data.eml.value
+                        "email" : data.email.value,
+                        "pass" : data.pass.value
                     })
                 };
                 
-                modifUssrs(`http://127.0.0.1:4000/usser/${id}`,PUT_request);
+                modifUssrs(`http://127.0.0.1:8080/usser`,PUT_request);
                 id = 0;
             }           
         }
@@ -111,22 +111,9 @@ function addUsser(){
                     text: "Your file has been deleted.",
                     icon: "success"
                   });
-                  DltUssrs(`http://127.0.0.1:4000/usser/dltUsu/${id}`,DELETE_request);
+                  DltUssrs(`http://127.0.0.1:8080/usser/${id}`,DELETE_request);
                 }
               });
-            
-              /*
-            do {
-                res = prompt(`¿Seguro que desea eliminar ha (y/n): ${data.dataset.name}  ${data.dataset.lastnF}`);
-                if(res !== "n" && res !== "y"){
-                    alert("Ingrese (y/n)");
-                }         
-            } while ( res !== "y" && res !== "n");
-
-            if(res != "n"){
-                id = data.dataset.id;
-                DltUssrs(`http://127.0.0.1:4000/usser/${id}`,DELETE_request);
-            }*/
         }
     });
     
@@ -154,11 +141,13 @@ async function showUssers(url_api){
         let res = await fetch(url_api),
             json = await res.json();
         if(!res.ok) { throw { status: res.status, statusText: res.statusText }} 
-        if(res.ok) console.log("ok");
-        addDom(json);
+        if(res.ok) {
+            console.log(json);
+            //addDom(json);
+        }
     } catch (err) {
         let msg = err.statusText || "Ocurrio un error";
-            console.log("status : ",err.status,"-",msg);
+            //console.log("status : ",err.status,"-",msg);
     }
 }
 
@@ -205,8 +194,9 @@ function addDom(json){
         $template.querySelector(".lstnF").textContent = el.lastnF;
         $template.querySelector(".lstnM").textContent = el.lastnM;
         $template.querySelector(".age").textContent = el.age;
-        $template.querySelector(".city").textContent = el.city;
         $template.querySelector(".email").textContent = el.email;
+        $template.querySelector(".pass").textContent = el.pass;
+        $template.querySelector(".tel").textContent = el.tel;
         //Elementos buttons
         // dataset : Colocar un nombre "dataset.any" seguido de la imformación que tomara el dataset, en este caso es el atributo del json
 
@@ -235,23 +225,17 @@ function addDom(json){
 }
 
 function pruebas(){
-    Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
-            icon: "success"
-          });
-        }
-      });
+    console.log("Hola");
+    fetch("http://127.0.0.1:8080/usser")
+    .then(res =>{ if(res.ok){ return res.json();} else { Promise.reject() }})
+    .then(json =>{
+        console.log(json);
+    })
+    .catch(err =>{
+        let msg = err.statusText || "Ocurrio un error";
+        return console.log(`Error ${err.message} : ${msg}`);
+    })
 }
 
-addUsser();
+//addUsser();
+pruebas();

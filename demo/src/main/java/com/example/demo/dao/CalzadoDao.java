@@ -10,5 +10,5 @@ public interface CalzadoDao {
     ResponseEntity<?> getAll();
     ResponseEntity<?> addClzd(@RequestBody calzadoModel calMod);
     ResponseEntity<?> updateClzd(@RequestBody calzadoModel calMod);
-    ResponseEntity<?> deltClzd(@PathVariable("name") String name);
+    ResponseEntity<?> deltClzd(@PathVariable("id") int id);
 }

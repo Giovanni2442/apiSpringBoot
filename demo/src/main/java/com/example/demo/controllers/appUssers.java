@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +27,7 @@ public class appUssers implements UsuarioDao {
 
     //GET all
     @Override
-    @GetMapping("/get")
+    @GetMapping
     public ResponseEntity<?> getAllusu() {
         try { 
             List<usserModel> getAllUsers = db.findAll(); 
@@ -38,7 +39,7 @@ public class appUssers implements UsuarioDao {
 
     //POST 
     @Override
-    @PostMapping("addUsu")
+    @PostMapping
     public ResponseEntity<?> addUsu(@RequestBody usserModel usu) {
         try {
             usserModel addUsu = db.save(usu);             // Instancia de la clase usuarios
@@ -50,17 +51,22 @@ public class appUssers implements UsuarioDao {
 
     //PUT 
     @Override
-    public ResponseEntity<?> UpdateUsu() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'UpdateUsu'");
+    @PutMapping
+    public ResponseEntity<?> UpdateUsu(@RequestBody usserModel usu) {
+        try {
+            usserModel modUsu = db.save(usu);             // Instancia de la clase usuarios
+            return new ResponseEntity<usserModel>(modUsu,HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<String>(e.getCause().toString(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     //DELETE
     @Override
-    @DeleteMapping("dltUsu/{id}")
-    public ResponseEntity<?> DeleteUsu(@PathVariable("id") String id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> DeleteUsu(@PathVariable("id") int id) {
         try {
-            db.deleteById(id);
+            db.deleteById(String.valueOf(id));
             return new ResponseEntity<String>("Delete Ok!",HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<String>(e.getCause().toString(),HttpStatus.INTERNAL_SERVER_ERROR);

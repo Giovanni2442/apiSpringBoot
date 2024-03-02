@@ -1,5 +1,4 @@
 package com.example.demo.dao;
-import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,8 +13,8 @@ public interface UsuarioDao {
     //POST usser
     ResponseEntity<?> addUsu(@RequestBody usserModel usu);
     //PUT usser
-    ResponseEntity<?> UpdateUsu();
+    ResponseEntity<?> UpdateUsu(@RequestBody usserModel usu);
     //DELETE usser
-    ResponseEntity<?> DeleteUsu(@PathVariable("id") String id);
+    ResponseEntity<?> DeleteUsu(@PathVariable("id") int id);
 
 }
