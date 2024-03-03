@@ -9,4 +9,16 @@ public class viewRedorect {
     public String form(){
         return "Index";
     }
+
+    @GetMapping("pr")
+    public String pr(){
+        return "jijija";
+    }
+
+    @GetMapping("hola")
+    public String hola(){
+        return "Hola";
+    }
 }
+
+

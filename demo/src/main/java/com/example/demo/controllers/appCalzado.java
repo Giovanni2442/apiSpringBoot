@@ -67,5 +67,4 @@ public class appCalzado implements CalzadoDao{
             return new ResponseEntity<String>(e.getCause().toString(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
 }

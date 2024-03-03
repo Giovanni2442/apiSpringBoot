@@ -143,11 +143,11 @@ async function showUssers(url_api){
         if(!res.ok) { throw { status: res.status, statusText: res.statusText }} 
         if(res.ok) {
             console.log(json);
-            //addDom(json);
+            addDom(json);
         }
     } catch (err) {
         let msg = err.statusText || "Ocurrio un error";
-            //console.log("status : ",err.status,"-",msg);
+            console.log("status : ",err.status,"-",msg);
     }
 }
 
@@ -191,8 +191,8 @@ function addDom(json){
         //Elementos td
         $template.querySelector(".id").textContent = el.id;
         $template.querySelector(".name").textContent = el.name;
-        $template.querySelector(".lstnF").textContent = el.lastnF;
-        $template.querySelector(".lstnM").textContent = el.lastnM;
+        $template.querySelector(".lstnF").textContent = el.lstnF;
+        $template.querySelector(".lstnM").textContent = el.lstnM;
         $template.querySelector(".age").textContent = el.age;
         $template.querySelector(".email").textContent = el.email;
         $template.querySelector(".pass").textContent = el.pass;
@@ -203,16 +203,16 @@ function addDom(json){
         //button editar
         $template.querySelector(".btn-edit").dataset.id = el.id;
         $template.querySelector(".btn-edit").dataset.name = el.name;
-        $template.querySelector(".btn-edit").dataset.lastnF = el.lastnF;
-        $template.querySelector(".btn-edit").dataset.lastnM = el.lastnM;
-        $template.querySelector(".btn-edit").dataset.age = el.age;
-        $template.querySelector(".btn-edit").dataset.city = el.city;
-        $template.querySelector(".btn-edit").dataset.email = el.email;
+        $template.querySelector(".btn-edit").dataset.lstnF = el.lstnF; 
+        $template.querySelector(".btn-edit").dataset.lstnM = el.lstnM;      
+        $template.querySelector(".btn-edit").dataset.age;
+        $template.querySelector(".btn-edit").dataset.email = el.city;        
+        $template.querySelector(".btn-edit").dataset.tel = el.tel;
         
         //button eliminar
         $template.querySelector(".btn-dlt").dataset.id = el.id;
         $template.querySelector(".btn-dlt").dataset.name = el.name;
-        $template.querySelector(".btn-dlt").dataset.lastF = el.lastF;
+        $template.querySelector(".btn-dlt").dataset.lastF = el.lstnF;
 
         //Style
         $template.querySelector(".btn-edit").classList.add("btns");
@@ -236,6 +236,5 @@ function pruebas(){
         return console.log(`Error ${err.message} : ${msg}`);
     })
 }
-
-//addUsser();
-pruebas();
+addUsser();
+//pruebas();
