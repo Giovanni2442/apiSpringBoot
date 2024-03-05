@@ -9,9 +9,9 @@ import lombok.Setter;
 @Document(collection = "ussers")        //Definir que representa una collección en la bd de mongodb 
 public class usserModel {
 
-    @Id
-    @Getter @Setter     //Define los Setters y Getters
-    private int id;
+    //Define los Setters y Getters
+    @Id @Getter
+    private String id;
     @Getter @Setter
     private String name;
     @Getter @Setter  
@@ -28,8 +28,7 @@ public class usserModel {
     private String tel;
 
     
-    public usserModel(int id, String name, String lstnF, String lstnM, int ege, String email, String pass, String tel) {
-        this.id = id;
+    public usserModel(String name, String lstnF, String lstnM, int ege, String email, String pass, String tel) {
         this.name = name;
         this.lstnF = lstnF;
         this.lstnM = lstnM;
@@ -38,6 +37,4 @@ public class usserModel {
         this.pass = pass;
         this.tel = tel;
     }
-
-    
 }

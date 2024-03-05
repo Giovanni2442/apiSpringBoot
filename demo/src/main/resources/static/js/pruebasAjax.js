@@ -6,16 +6,15 @@ function addUsser(){
         $template = document.getElementById("crud-template").content;
 
     let b1 = 0,
-        id = 0;
+        id = "";
         
-
     //---SHOW USSERS IN TABLE---
     document.addEventListener("DOMContentLoaded",showUssers(`http://127.0.0.1:8080/usser`));
     
     //---SUBMIT---
     document.addEventListener("submit", async(e) =>{ 
-        let data = e.target;
-        console.log(id);
+        let data = e.target; //Optiene eñ id del json
+        //console.log(id);
         if(e.target === $form){
             e.preventDefault();
             if( $btnSend.textContent === "SEND" ){
@@ -34,12 +33,13 @@ function addUsser(){
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
-                            "name" : data.name.value,
-                            "lastnF" : data.lastF.value,
-                            "lastnM" : data.lastM.value,
+                            "name" : data.name.value,   //Valores de los input
+                            "lstnF" : data.lastF.value,
+                            "lstnM" : data.lastM.value,
                             "age" : data.age.value,
                             "email" : data.email.value,
-                            "pass" : data.pass.value
+                            "pass" : data.pass.value,
+                            "tel" : data.tel.value
                         })
                     };
 
@@ -59,36 +59,40 @@ function addUsser(){
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         "name" : data.name.value,
-                        "lastnF" : data.lastF.value,
-                        "lastnM" : data.lastM.value,
+                        "lstnF" : data.lstnF.value,
+                        "lstnM" : data.lstnM.value,
                         "age" : data.age.value,
                         "email" : data.email.value,
-                        "pass" : data.pass.value
+                        "pass" : data.pass.value,
+                        "tel" : data.tel.value
                     })
                 };
                 
-                modifUssrs(`http://127.0.0.1:8080/usser`,PUT_request);
-                id = 0;
+                modifUssrs(`http://127.0.0.1:8080/usser/${id}`,PUT_request);
+                id = ""; //limpia la variable para dar paso a un nuevo id
             }           
         }
     });
 
-    //---BUTTONS EVENT CLICK---
+    //---BUTTONS EVENT CLICK EDIT AND DELETE---
     document.addEventListener("click", (e)=>{
         let data = e.target,
             res;
         if(e.target.matches(".btn-edit")){
+            //llenara el form con el dataset de la tabla
             $form.name.value = data.dataset.name;
-            $form.lastF.value = data.dataset.lastnF;
-            $form.lastM.value = data.dataset.lastnM;
+            $form.lstnF.value = data.dataset.lstnF;
+            $form.lstnM.value = data.dataset.lstnM;
             $form.age.value = data.dataset.age;
-            $form.cty.value = data.dataset.city;
-            $form.eml.value = data.dataset.email;
+            $form.email.value = data.dataset.email;
+            $form.pass.value = data.dataset.pass;
+            $form.tel.value = data.dataset.tel;
+
             //change states
             $tittle.textContent = "EDIT USSER";
             $btnSend.textContent = "Edit";
             id = data.dataset.id;
-            console.log(data.dataset.name);
+            console.log(data.dataset.id);
         }
         if(e.target.matches(".btn-dlt")){
             const DELETE_request = {
@@ -111,7 +115,8 @@ function addUsser(){
                     text: "Your file has been deleted.",
                     icon: "success"
                   });
-                  DltUssrs(`http://127.0.0.1:8080/usser/${id}`,DELETE_request);
+                  //console.log(data.dataset.id);
+                  DltUssrs(`http://127.0.0.1:8080/usser/${data.dataset.id}`,DELETE_request);
                 }
               });
         }
@@ -188,6 +193,8 @@ function addDom(json){
         $fragment = document.createDocumentFragment(); 
 
     json.forEach(el =>{
+
+        console.log(el.id);
         //Elementos td
         $template.querySelector(".id").textContent = el.id;
         $template.querySelector(".name").textContent = el.name;
@@ -225,9 +232,16 @@ function addDom(json){
 }
 
 function pruebas(){
+    const DELETE_request = {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+    };
+
+    const id = "65e546bd3cf088581bea2201";
+
     console.log("Hola");
-    fetch("http://127.0.0.1:8080/usser")
-    .then(res =>{ if(res.ok){ return res.json();} else { Promise.reject() }})
+    fetch(`http://127.0.0.1:8080/usser/${id}`,DELETE_request)
+    .then(res =>{ if(res.ok){ return "delete ok!";} else { Promise.reject() }})
     .then(json =>{
         console.log(json);
     })
@@ -236,5 +250,5 @@ function pruebas(){
         return console.log(`Error ${err.message} : ${msg}`);
     })
 }
-addUsser();
-//pruebas();
+//addUsser();
+pruebas();
