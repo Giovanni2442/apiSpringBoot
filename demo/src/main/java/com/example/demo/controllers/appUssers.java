@@ -68,6 +68,7 @@ public class appUssers implements UsuarioDao {
         }
     }
 
+     
     //PUT 
     @Override
     @PutMapping("/{id}")
@@ -107,6 +108,17 @@ public class appUssers implements UsuarioDao {
             return new ResponseEntity<String>("Delete Ok!",HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<String>(e.getCause().toString(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/pr/{id}") 
+    public Boolean pr(@PathVariable("id") String id){
+        Optional<usserModel> rest = db.findById(id);
+
+        if (rest.isPresent()) {
+            return true ;
+        }else{
+            return false;
         }
     }
     

@@ -88,6 +88,10 @@ function addUsser(){
             $form.pass.value = data.dataset.pass;
             $form.tel.value = data.dataset.tel;
 
+            console.log(data.dataset.age);
+            console.log(data.dataset.email);
+            console.log(data.dataset.pass);
+
             //change states
             $tittle.textContent = "EDIT USSER";
             $btnSend.textContent = "Edit";
@@ -183,8 +187,9 @@ function addDom(json){
         $template.querySelector(".btn-edit").dataset.name = el.name;
         $template.querySelector(".btn-edit").dataset.lstnF = el.lstnF; 
         $template.querySelector(".btn-edit").dataset.lstnM = el.lstnM;      
-        $template.querySelector(".btn-edit").dataset.age;
-        $template.querySelector(".btn-edit").dataset.email = el.city;        
+        $template.querySelector(".btn-edit").dataset.age = el.age;
+        $template.querySelector(".btn-edit").dataset.email = el.email;
+        $template.querySelector(".btn-edit").dataset.pass = el.pass;       
         $template.querySelector(".btn-edit").dataset.tel = el.tel;
         
         //button eliminar
