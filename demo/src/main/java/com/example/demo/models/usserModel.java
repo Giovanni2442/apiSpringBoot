@@ -19,7 +19,7 @@ public class usserModel {
     @Getter @Setter 
     private String lstnM;
     @Getter @Setter
-    private int ege;
+    private int age;
     @Getter @Setter
     private String email;
     @Getter @Setter
@@ -28,11 +28,11 @@ public class usserModel {
     private String tel;
 
     
-    public usserModel(String name, String lstnF, String lstnM, int ege, String email, String pass, String tel) {
+    public usserModel(String name, String lstnF, String lstnM, int age, String email, String pass, String tel) {
         this.name = name;
         this.lstnF = lstnF;
         this.lstnM = lstnM;
-        this.ege = ege;
+        this.age = age;
         this.email = email;
         this.pass = pass;
         this.tel = tel;

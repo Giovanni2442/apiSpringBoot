@@ -34,8 +34,8 @@ function addUsser(){
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             "name" : data.name.value,   //Valores de los input
-                            "lstnF" : data.lastF.value,
-                            "lstnM" : data.lastM.value,
+                            "lstnF" : data.lstnF.value,
+                            "lstnM" : data.lstnM.value,
                             "age" : data.age.value,
                             "email" : data.email.value,
                             "pass" : data.pass.value,
@@ -48,7 +48,7 @@ function addUsser(){
                         icon: "success"
                       }).then((isOk) => {
                         if(isOk){
-                            sendUsser("http://127.0.0.1:8080/usser",POST_request);
+                            ajax("http://127.0.0.1:8080/usser",POST_request);
                         }
                       })
                 };
@@ -68,7 +68,7 @@ function addUsser(){
                     })
                 };
                 
-                modifUssrs(`http://127.0.0.1:8080/usser/${id}`,PUT_request);
+                ajax(`http://127.0.0.1:8080/usser/${id}`,PUT_request);
                 id = ""; //limpia la variable para dar paso a un nuevo id
             }           
         }
@@ -92,7 +92,6 @@ function addUsser(){
             $tittle.textContent = "EDIT USSER";
             $btnSend.textContent = "Edit";
             id = data.dataset.id;
-            console.log(data.dataset.id);
         }
         if(e.target.matches(".btn-dlt")){
             const DELETE_request = {
@@ -115,29 +114,14 @@ function addUsser(){
                     text: "Your file has been deleted.",
                     icon: "success"
                   });
-                  //console.log(data.dataset.id);
-                  DltUssrs(`http://127.0.0.1:8080/usser/${data.dataset.id}`,DELETE_request);
+                  console.log(data.dataset.id);
+                  ajax(`http://127.0.0.1:8080/usser/${data.dataset.id}`,DELETE_request)
+                  //DltUssrs(`http://127.0.0.1:8080/usser/${data.dataset.id}`,DELETE_request);
                 }
               });
         }
     });
     
-}
-
-//POST ussers
-async function sendUsser(url,request){
-    try {
-        let res = await fetch(url,request),
-            json = await res.json();
-                          //location.reload :  hace que se recargue de manera automatica la pagina al receibir una petición
-        console.log("-->",request.method);
-        if(!res.ok) { throw { status: res.status, statusText: res.statusText } } 
-        if(res.ok) 
-        location.reload();
-    } catch (err) {
-        let msg = err.statusText || "Ocurrio un error";
-            console.log("status : ",err.status,"-",msg);
-    }
 }
 
 //GET ussers in table
@@ -156,34 +140,21 @@ async function showUssers(url_api){
     }
 }
 
-//PUT ussers
-async function modifUssrs(url_api,request){
-    try {
-        let res = await fetch(url_api,request),
-            json = await res.json();   
-        if(!res.ok) { throw { status: res.status, statusText: res.statusText }} 
-        if(res.ok) console.log("editado ok");
+//Peticiónes ajax
+function ajax(url_api,request){
+    console.log("Hola");
+    fetch(url_api,request)
+    .then(res =>{ if(res.ok){ return "yes"; } else { Promise.reject() }})
+    .then(json =>{
+        console.log(json);
         location.reload();
-    } catch (err) {
+    })
+    .catch(err =>{
         let msg = err.statusText || "Ocurrio un error";
-            console.log("status : ",err.status,"-",msg);
-    }
+        return console.log(`Error ${err.message} : ${msg}`);
+    })
 }
 
-//Delete ussers
-async function DltUssrs(url_api,request){
-    try {
-        let res = await fetch(url_api,request),
-            json = await res.json();
-
-        if(!res.ok) { throw { status: res.status, statusText: res.statusText }} 
-        if(res.ok) console.log("Delete ok!");
-        location.reload();
-    } catch (err) {
-        let msg = err.statusText || "Ocurrio un error";
-            console.log("status : ",err.status,"-",msg);
-    }
-}
 
 //Construcción de la tabla
 function addDom(json){
@@ -231,24 +202,29 @@ function addDom(json){
     $table.appendChild($fragment);
 }
 
-function pruebas(){
-    const DELETE_request = {
-        method: 'DELETE',
+/*function pruebas(){
+    const PUT_request = {
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            "name" : data.name.value,
+            "lstnF" : data.lstnF.value,
+            "lstnM" : data.lstnM.value,
+            "age" : data.age.value,
+            "email" : data.email.value,
+            "pass" : data.pass.value,
+            "tel" : data.tel.value
+        })
     };
 
-    const id = "65e546bd3cf088581bea2201";
+    let url = "";
 
-    console.log("Hola");
-    fetch(`http://127.0.0.1:8080/usser/${id}`,DELETE_request)
-    .then(res =>{ if(res.ok){ return "delete ok!";} else { Promise.reject() }})
-    .then(json =>{
-        console.log(json);
-    })
-    .catch(err =>{
-        let msg = err.statusText || "Ocurrio un error";
-        return console.log(`Error ${err.message} : ${msg}`);
-    })
-}
-//addUsser();
-pruebas();
+    fetch(url,PUT_request)
+    .then(res => { if(res.ok) ? })
+    .then()
+    .catch()
+}*/
+
+
+addUsser();
+//pruebas();

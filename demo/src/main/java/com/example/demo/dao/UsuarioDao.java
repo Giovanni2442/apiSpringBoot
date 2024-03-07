@@ -15,7 +15,7 @@ public interface UsuarioDao {
     //POST usser
     ResponseEntity<?> addUsu(@RequestBody usserModel usu);
     //PUT usser
-    ResponseEntity<?> UpdateUsu(@PathVariable("id") String id,  @RequestBody usserModel usu);
+    ResponseEntity<?> UpdateUsu(@PathVariable("id") String id, @RequestBody usserModel usu);
     //DELETE usser
     ResponseEntity<?> DeleteUsu(@PathVariable("id") String id);
 
