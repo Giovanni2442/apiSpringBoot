@@ -1,4 +1,4 @@
-package com.example.demo.controllers;
+package com.example.demo.views;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +20,11 @@ public class viewRedorect {
     @GetMapping("pr")
     public String pr(){
         return "jijija";
+    }
+
+    @GetMapping("Index")
+    public String index(){
+        return "Index";
     }
 
     /*only RestController

@@ -11,7 +11,8 @@
     "catacteristics" : {
         "category" : "tenis",
         "material" : "gamusa",
-        "suela" : "Goma antideslizante",
+        "suela" : "Goma antideslizante",	
         "sex" : "unisex"
-    }
-}
+        }
+   
+   }

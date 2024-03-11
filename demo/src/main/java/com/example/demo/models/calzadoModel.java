@@ -8,9 +8,10 @@ import lombok.Setter;
 
 @Document(collection = "calzado")
 public class calzadoModel {
-    @Id
-    @Getter @Setter
-    private int id;
+    
+    //String key | String value
+    @Id @Getter 
+    private String id;
     @Getter @Setter
     private String name;
     @Getter @Setter
@@ -20,7 +21,7 @@ public class calzadoModel {
     @Getter @Setter
     private String size;
     @Getter @Setter
-    private int color;
+    private String color;
     @Getter @Setter
     private float price;
     @Getter @Setter
@@ -28,17 +29,10 @@ public class calzadoModel {
     @Getter @Setter
     private String description;
     @Getter @Setter
-    private String category;
-    @Getter @Setter
-    private int material;
-    @Getter @Setter
-    private String suela;
-    @Getter @Setter
-    private String sex;
+    private Characteristics characteristics;
 
-    public calzadoModel(int id, String name, String model, String image, String size, int color, float price,
-            String brand, String description, String category, int material, String suela, String sex) {
-        this.id = id;
+    public calzadoModel( String name, String model, String image, String size, String color, float price,
+            String brand, String description, int material, String suela, String sex) {
         this.name = name;
         this.model = model;
         this.image = image;
@@ -47,9 +41,18 @@ public class calzadoModel {
         this.price = price;
         this.brand = brand;
         this.description = description;
-        this.category = category;
-        this.material = material;
-        this.suela = suela;
-        this.sex = sex;
     } 
+
+    protected Characteristics characteristics(){
+        return characteristics();
+    }
+
+    @Setter @Getter
+    public static class Characteristics{
+        private String category;
+        private String material;
+        private String gender;
+        private String suela;
+    }
+
 }

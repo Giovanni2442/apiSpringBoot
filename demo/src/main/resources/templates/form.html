@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="style/prAjax.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section class="cnt-form">
+            <form class="frm">
+                <h1 class="cnt-tittle">ADD USSER</h1>
+                <label>Name</label>
+                <input  type="text" name="name" placeholder="name">
+                <label>last Father</label>
+                <input  type="text" name="lstnF" placeholder="lastname Father">
+                <label>last Mother</label>
+                <input  type="text" name="lstnM" placeholder="lastname Mother">
+                <label>Age</label>
+                <input  type="text" name="age" placeholder="age">
+                <label>email</label>
+                <input  type="text" name="email" placeholder="email">
+                <label>password</label>
+                <input  type="text" name="pass" placeholder="password">
+                <label>tel</label>
+                <input  type="text" name="tel" placeholder="Telefono">
+
+                <button id="request" type="submit">SEND</button>
+            </form>
+        </section>
+
+        <!--Templete de elementos para el contenido
+            de la tabla de ususarios-->
+
+        <template id="crud-template">
+            <tr>
+                <td class="id"></td>
+                <td class="name"></td>
+                <td class="lstnF"></td>
+                <td class="lstnM"></td>
+                <td class="age"></td>
+                <td class="email"></td>
+                <td class="pass"></td>
+                <td class="tel"></td>
+                <td>
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-dlt">Eliminar</button>
+                </td>
+            </tr>
+        </template>
+
+        <section class="cnt-table-Ussrs">
+            <h2 class="cnt-tittl-tbl">Ussers</h2>
+            <table class="crud-table">
+                <thead>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>lstnF</th>
+                    <th>lstnM</th>
+                    <th>age</th>
+                    <th>email</th>
+                    <th>password</th>
+                    <th>Tel</th>
+                    <th>Acciones</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+        <!--Modal-->
+        <div>
+        </div>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!--<script src="js/Pruebas.js"></script>-->
+<script src="js/pruebasAjax.js"></script>
+</html>

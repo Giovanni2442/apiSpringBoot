@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dao.UsuarioDao;
-import com.example.demo.models.Apimsg;
+import com.example.demo.models.messageRtrn;
 import com.example.demo.models.usserModel;
 import com.example.demo.repository.appMongo;
 
@@ -25,7 +25,6 @@ import com.example.demo.repository.appMongo;
 @RequestMapping("usser")
 public class appUssers implements UsuarioDao {
    
-
     @Autowired
     appMongo db; //Acceso bd
 
@@ -73,8 +72,8 @@ public class appUssers implements UsuarioDao {
     @Override
     @PutMapping("/{id}")
     public ResponseEntity<?> UpdateUsu(@PathVariable("id") String id, @RequestBody usserModel usu) {
-        Apimsg msgTrue = new Apimsg("Localizado!");
-        Apimsg msgFalse = new Apimsg("No se encontro el Id!");
+        messageRtrn msgTrue = new messageRtrn("Localizado!");
+        messageRtrn msgFalse = new messageRtrn("No se encontro el Id!");
 
         try {
             usserModel usuPut = db.findById(id).orElse(null);
