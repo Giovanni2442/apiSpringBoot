@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dao.CalzadoDao;
 import com.example.demo.models.calzadoModel;
-import com.example.demo.models.usserModel;
 import com.example.demo.repository.appMongoClzd;
 
 @RestController
@@ -31,8 +30,8 @@ public class appCalzado implements CalzadoDao{
     @GetMapping
     public ResponseEntity<?> getAll() {
         try { 
-            List<calzadoModel> getAllUsers = db.findAll(); 
-            return new ResponseEntity<List<calzadoModel>>(getAllUsers,HttpStatus.CREATED);   
+            List<calzadoModel> getAllClzd = db.findAll(); 
+            return new ResponseEntity<List<calzadoModel>>(getAllClzd,HttpStatus.CREATED);   
         } catch (Exception e) {
             return new ResponseEntity<String>(e.getCause().toString(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -53,7 +52,7 @@ public class appCalzado implements CalzadoDao{
     @PostMapping
     public ResponseEntity<?> addClzd(@RequestBody calzadoModel calMod) {
         try {
-        calzadoModel addCld = db.insert(calMod);             // Instancia de la clase usuarios  
+            calzadoModel addCld = db.insert(calMod);             // Instancia de la clase usuarios  
             return new ResponseEntity<calzadoModel>(addCld,HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<String>(e.getCause().toString(),HttpStatus.INTERNAL_SERVER_ERROR);

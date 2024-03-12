@@ -10,8 +10,8 @@ import lombok.Setter;
 public class calzadoModel {
     
     //String key | String value
-    @Id @Getter 
-    private String id;
+    @Id @Setter @Getter 
+    private int id;
     @Getter @Setter
     private String name;
     @Getter @Setter
@@ -31,8 +31,9 @@ public class calzadoModel {
     @Getter @Setter
     private Characteristics characteristics;
 
-    public calzadoModel( String name, String model, String image, String size, String color, float price,
-            String brand, String description, int material, String suela, String sex) {
+    public calzadoModel(int id, String name, String model, String image, String size, String color, float price,
+            String brand, String description, Characteristics characteristics) {
+        this.id = id;
         this.name = name;
         this.model = model;
         this.image = image;
@@ -41,7 +42,8 @@ public class calzadoModel {
         this.price = price;
         this.brand = brand;
         this.description = description;
-    } 
+        this.characteristics = characteristics;
+    }
 
     protected Characteristics characteristics(){
         return characteristics();
