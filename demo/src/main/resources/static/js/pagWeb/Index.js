@@ -5,11 +5,13 @@ function pruebas(){
 
     const url_clzd = `http://127.0.0.1:8080/calzado`;
     
+    //Agregar tarjetas al Index de la pagina
     const addCards = ()=>{
-        ajax(url_clzd)
-        .then(json =>{
-            for (let key in json) {
-                console.log(json[key].name);
+        let num = 4;
+        ajax(url_clzd)                  //promesa a la peticion
+        .then(json =>{                  //Devuelve el json con la info de la bd
+            for (let key in json) {     //Accede mediante un ciclo a las llaves del json de la db y toma sus valores
+               // console.log(json[key].name);
                 let url_img = json[key].image,
                     name = json[key].name,
                     precio = json[key].price,
@@ -19,18 +21,21 @@ function pruebas(){
                 $template.querySelector("img").setAttribute("src",url_img);
                 $template.querySelector("h2").textContent = name;
                 $template.querySelector("figcaption").innerHTML = `
-                <p>$${precio}</p>
-                <button>Agregar al carrito!</button>`;
+                <p id="crd-precio">$${precio}</p>
+                <button id="crd-buttn">Agregar al carrito!</button>`;
+                
                 //Styles
                 $template.querySelector("figure").classList.add("tmplCard");
+                $template.querySelector("div").classList.add("pru");
                 $template.querySelector("img").classList.add("imgCard");
                 $template.querySelector("figcaption").classList.add("figCard");
-
+                //$template.querySelector("figcaption p").classList.add("precio");
+               
                 //create card
                 let $clone = document.importNode($template,true);
-                $fragment.appendChild($clone);
-                $content.appendChild($fragment);
+                $fragment.appendChild($clone); 
             }
+            $content.appendChild($fragment);
         });
     }
 
@@ -47,8 +52,29 @@ const ajax = async (api_url) =>{
     })
 }
 
-//const showClzd = () =>{
+function prModal(){
+    const $cards = document.querySelector(".cnt-cards"),    //Referencia al contenido de las cards
+        $modal = document.querySelector(".modal");
+    let r,r2,cards;
 
-//}
+    document.addEventListener("click", (e)=>{               //Evento clickleable
+        r = Array.from($cards.children);
+        r2 = Array.from(e.target.children);
+    
+       // console.log(r2);
+        console.log(e.target.className);
+        if(e.target.className === "cnt-elmnts pru"){
+            //console.log("true jer");
+            $modal.style.visibility = "visible";
+ 
+        }
+        /*r.forEach(el =>{
+            const $h2Elmnt = el.querySelector("h2");
+            console.log($h2Elmnt.textContent);
+        })*/
+        //console.log($cards.children);
+    });
+}
 
+prModal();
 pruebas();

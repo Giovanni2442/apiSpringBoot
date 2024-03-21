@@ -13,14 +13,32 @@
             <h1>Zapateria</h1>
         </header>
 
+        <!--Show cards-->
         <article class="cnt-cards"></article>
+
+        <!--modal click descriprion of each cards-->
+        <section class="modal">
+            <button class="btn-close">Cerrar</button>
+            <article class="cnt-modal">
+                <template>                              <!--plantilla del modal-->
+                    <h2></h2>                           <!--titulo del producto-->
+                    <h2 class="cnt-DescPrd"></h2>       <!--Descripción leve del producto-->
+                    <p class="cnt-Presio"></p>          <!--Precio del producto-->
+                    <h3 class="cnt-TtlTall"></h3>       <!--Titulo tallas-->
+                    <div class="cnt-tallas"></div>      <!--Contenedor de todas las tallas disponibles-->
+                    <h3></h3>                           <!--Titulo de colores disponibles para el producto-->                          
+                </template>
+            </article>
+        </section>
 
         <!--Template de cartas-->
         <template id="template">
             <figure class="card">
-                <img>
-                <h2></h2>
-                <figcaption></figcaption>
+                <div class="cnt-elmnts">
+                    <img/>
+                    <h2></h2>
+                    <figcaption></figcaption>
+                </div>
             </figure>
         </template>
     </main>
