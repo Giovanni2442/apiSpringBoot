@@ -1,0 +1,24 @@
+body{
+    border: 1px solid red;
+}
+
+.cnt_1{
+    background-color: rebeccapurple;
+    width: 45%;
+    height: 10rem;
+    margin: 5px;
+}
+
+.cnt_2{
+    background-color: red;
+    width: 45%;
+    height: 10rem;
+    margin: 5px;
+}
+
+.cnt_3{
+    background-color: aqua;
+    width: 45%;
+    height: 10rem;
+    margin: 5px;
+}

@@ -1,0 +1,132 @@
+
+main{
+
+}
+
+/*--H1/H2--*/
+
+.cnt-tittle{
+    margin: 5px;
+    color: whitesmoke;
+    font-family: system-ui;
+    font-size: xx-large;
+}
+
+.cnt-tittl-tbl{
+    font-family: system-ui;
+    font-size: xx-large;
+}
+
+/*----Form Style----*/
+.cnt-form{
+    margin: 5px;
+    border: 1px solid rgb(0, 255, 123);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .frm{
+        margin: 5px;
+        background: rgb(24 47 140 / 98%);
+        padding: 2rem;
+        width: 15rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 8px 9px 20px ;
+        border-radius: 5px;
+    }
+    .frm label{
+        font-family: sans-serif;
+        color: aliceblue;
+        margin: 5px;
+    }
+
+    .frm input{
+        border-radius: 5px;
+        background: rgb(250 248 255 / 58%);
+        transition: transform 0.2s ease-in-out;
+        margin: 5px;
+        
+    }
+
+    .frm button{
+        border: none;
+        background-color: rgb(38 102 149 / 41%);
+        border-radius: 5px;
+        width: 64px;
+        height: 22px;
+        font-family: sans-serif;
+        color: aliceblue;
+        transition: transform 0.2s ease-in-out;
+        margin: 5px;
+    }
+
+    /*animated elements*/
+    .frm input:hover{
+        transform: scale(1.2);
+        box-shadow: 3px 2px 12px #3e3e3ec0;
+    }
+
+    .frm button:hover{
+        transform: scale(1.2);
+        color: rgba(216, 206, 117, 0.817);
+        box-shadow: 3px 2px 12px #3e3e3ec0;
+    }
+
+/*----Table Style----*/
+
+.cnt-table-Ussrs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    .crud-table{
+        width: auto;
+        height: auto;
+        background: linear-gradient(to top, #1fd91f, 20%, #343737);
+        color: whitesmoke;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+        .crud-table thead{
+            background: rgb(33, 30, 36);
+            color: whitesmoke;
+            margin: 5px;
+        }
+
+        .crud-table th{
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+        .crud-table td{
+            background: #00000045;
+            border: 1px solid black;
+            padding: 10px;   
+        }
+
+/*--Style js--*/
+
+.btns{
+    border-radius: 10px;
+    border: none;
+    background: #00000045;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    height: 25px;
+    margin: 0%;
+}
+    .btns:hover{
+        transform: scale(1.2);
+    }
+
+
+
+
+
+

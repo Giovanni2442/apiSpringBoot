@@ -1,0 +1,18 @@
+{
+    "id" : "1",
+    "name" : "Jordan 4 Retro Midnight Navy",
+    "model" : "Confort-x",
+    "image" : "img.jpg",
+    "size" : 22.5,
+    "color" : "white",
+    "price" : 500.99,
+    "brand" : "vans",
+    "description" : "shoes of type sports",
+    "catacteristics" : {
+        "category" : "tenis",
+        "material" : "gamusa",
+        "suela" : "Goma antideslizante",	
+        "sex" : "unisex"
+        }
+   
+   }
