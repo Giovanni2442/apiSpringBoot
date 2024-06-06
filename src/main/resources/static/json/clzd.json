@@ -1,18 +1,38 @@
 {
-    "id" : "1",
-    "name" : "Jordan 4 Retro Midnight Navy",
-    "model" : "Confort-x",
-    "image" : "img.jpg",
-    "size" : 22.5,
-    "color" : "white",
-    "price" : 500.99,
-    "brand" : "vans",
-    "description" : "shoes of type sports",
-    "catacteristics" : {
-        "category" : "tenis",
-        "material" : "gamusa",
-        "suela" : "Goma antideslizante",	
-        "sex" : "unisex"
+    "id": 1,
+    "nombre": "Jordan 4 Retro Midnight Navy",
+    "cantidad": 9909,
+    "price": 500.99,
+    "images": {
+        "1": "assets/img/calzado.jpeg",
+        "2": "assets/img/calzado.jpeg",
+        "3": "assets/img/calzado.jpeg"
+    },
+    "sizes": {
+        "1": "22.3",
+        "2": "23.24",
+        "3": "24.5",
+        "4": "27"
+    },
+    "color": {
+        "1": "Red",
+        "2": "Green"
+    },
+    "characteristics": {
+        "marca" : "VANS",
+        "material" : "Gamusa",
+        "promo" : "40%",
+        "category": "tenis",
+        "sex": "unisex",
+        "leyenda": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum voluptatibus amet neque facilis esse ad praesentium magni ullam cupiditate blanditiis magnam quo, olestiae, placeat nemo eveniet non vitae voluptas! Inventore?",
+        "details": {
+            "1": "producto anti derapante",
+            "2": "Resistente al agua",
+            "3": "Labable",
+            "4": "pruebas 1",
+            "5": "pruebas 1",
+            "6": "pruebas 1",
+            "7": "pruebas 1"
         }
-   
-   }
+    }
+}

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Mariela</title>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> --> 
+
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+   <!-- Archivos de Bootstrap -->
+   <link th:href="@{/vendor/animate.css/animate.min.css}" rel="stylesheet">
+   <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+   <link th:href="@{/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+   <link th:href="@{/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+
+   <!-- Estilos CSS -->
+   <link th:href="@{/style/style.css}" rel="stylesheet">
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+
+    <!-- ======= Intro Section ======= -->
+    <div class="intro intro-carousel swiper position-relative">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide carousel-item-a intro-item bg-image"
+                style="background-image: url(assets/img/slide-1.jpg)">
+                <div class="overlay overlay-a"></div>
+                <div class="intro-content display-table">
+                    <div class="table-cell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="intro-body">
+                                        <h3 class="intro-title-top fw-bold">
+                                            Hasta agotar existencias.
+                                        </h3>
+                                        <h1 class="intro-title mb-4 ">
+                                            <span class="color-b">30% </span> ofertas de
+                                            <br> primavera <span class="color-b">2024 </span>
+                                        </h1>
+                                        <p class="intro-subtitle intro-price">
+                                            <a href="#"><span class="price-a">Compra aqui</span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide carousel-item-a intro-item bg-image"
+                style="background-image: url(assets/img/slide-3.jpg)">
+                <div class="overlay overlay-a"></div>
+                <div class="intro-content display-table">
+                    <div class="table-cell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="intro-body2">
+                                        <h4 class="intro-title-top fw-bold">
+                                            Solo en la página web.
+                                        </h4>
+                                        <h1 class="intro-title mb-4">
+                                            <span class="color-b">modelos </span>
+                                            <br> nuevos
+                                        </h1>
+                                        <p class="intro-subtitle intro-price">
+                                            <a th:href="@{/Index}"><span class="price-a">echa un vistazo</span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide carousel-item-a intro-item bg-image"
+                style="background-image: url(assets/img/slide-2.jpg)">
+                <div class="overlay overlay-a"></div>
+                <div class="intro-content display-table">
+                    <div class="table-cell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="intro-body3">
+                                        <h1 class="intro-title mb-4">
+                                            temporada <br>
+                                            <span class="color-bi">primavera </span> 
+                                        </h1>
+                                        <p class="intro-subtitle intro-price">
+                                            <a th:href="@{/Index}"><span class="price-a">Compra</span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div><!-- End Intro Section -->
+
+    <main id="main">
+
+        <!-- ======= Services Section ======= -->
+        <section class="section-services section-t8">
+            <div id="welcomeMessage"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <div class="title-box">
+                                <h2 class="title-a">NUESTROS SERVICIOS</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card-box-c foo">
+                            <div class="card-header-c d-flex">
+                                <div class="card-box-ico">
+                                    <span class="bi bi-cart"></span>
+                                </div>
+                                <div class="card-title-c align-self-center">
+                                    <h2 class="title-c">Envios gratis</h2>
+                                </div>
+                            </div>
+                            <div class="card-body-c">
+                                <p class="content-c">
+                                    Disfruta de la comodidad de recibir tus productos favoritos en la puerta de tu casa
+                                    sin costo adicional, lo que te permite ahorrar tiempo y dinero en tus compras en
+                                    línea.
+                                    Como parte de nuestro compromiso de brindar una experiencia de compra conveniente y
+                                    sin complicaciones para nuestros clientes.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-box-c foo">
+                            <div class="card-header-c d-flex">
+                                <div class="card-box-ico">
+                                    <span class="bi  bi-truck"></span>
+                                </div>
+                                <div class="card-title-c align-self-center">
+                                    <h2 class="title-c">Política de Devolución</h2>
+                                </div>
+                            </div>
+                            <div class="card-body-c">
+                                <p class="content-c">
+                                    Nuestra política de devolución te ofrece total tranquilidad durante 90 días.
+                                    Si por alguna razón no estás completamente satisfecho con tu compra,
+                                    puedes devolver el producto dentro de los 90 días posteriores a la compra para
+                                    obtener un reembolso completo o un cambio.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-box-c foo">
+                            <div class="card-header-c d-flex">
+                                <div class="card-box-ico">
+                                    <span class="bi bi-credit-card"></span>
+                                </div>
+                                <div class="card-title-c align-self-center">
+                                    <h2 class="title-c">Meses sin intereses</h2>
+                                </div>
+                            </div>
+                            <div class="card-body-c">
+                                <p class="content-c">
+                                    Compra ahora y paga a tu propio ritmo con nuestra opción de meses sin intereses!
+                                    Con esta conveniente oferta, puedes adquirir tus productos favoritos y dividir el
+                                    pago en cómodas mensualidades, sin preocuparte por cargos adicionales de interés.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= PRODUCTOS POPULARES Section ======= -->
+        <section class="section-property section-t8">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <div class="title-box">
+                                <h2 class="title-a">PRODUCTOS POPULARES</h2>
+                            </div>
+                            <div class="title-link">
+                                <a th:href="@{/Index}">
+                                    Todos los productos
+                                    <span class="bi bi-chevron-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="property-carousel" class="swiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="carousel-item-b swiper-slide">
+                            <div class="card-box-a card-shadow">
+                                <div class="img-box-a">
+                                    <img src="assets/img/property-1.jpeg" alt="" class="img-a img-fluid">
+                                </div>
+                                <div class="card-overlay">
+                                    <div class="card-overlay-a-content">
+                                        <div class="card-header-a">
+                                            <h2 class="card-title-a">
+                                                <a th:href="@{/Index}">
+                                                    206 Mount
+                                                    <br /> Olive Two
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div class="card-body-a">
+                                            <div class="price-box d-flex">
+                                                <span class="price-a">Comprar ahora | $ 120.00</span>
+                                            </div>
+                                            <a th:href="@{/Index}" class="link-a">
+                                                Click aqui para ver
+                                                <span class="bi bi-chevron-right"></span>
+                                            </a>
+                                        </div>
+                                        <div class="card-footer-a">
+                                            <ul class="card-info d-flex justify-content-around">
+                                                
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span class=" fw-bold">Tallas</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>23</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>24</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>25</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>26</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End carousel item -->
+
+                        <div class="carousel-item-b swiper-slide">
+                            <div class="card-box-a card-shadow">
+                                <div class="img-box-a">
+                                    <img src="assets/img/property-2.jpeg" alt="" class="img-a img-fluid">
+                                </div>
+                                <div class="card-overlay">
+                                    <div class="card-overlay-a-content">
+                                        <div class="card-header-a">
+                                            <h2 class="card-title-a">
+                                                <a th:href="@{/Index}">
+                                                    157 West
+                                                    <br /> Central
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div class="card-body-a">
+                                            <div class="price-box d-flex">
+                                                <span class="price-a">Comprar ahora | $ 120.00</span>
+                                            </div>
+                                            <a th:href="@{/Index}" class="link-a">
+                                                Click aqui para ver
+                                                <span class="bi bi-chevron-right"></span>
+                                            </a>
+                                        </div>
+                                        <div class="card-footer-a">
+                                            <ul class="card-info d-flex justify-content-around">
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span class=" fw-bold">Tallas</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>23</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>24</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>25</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>26</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End carousel item -->
+
+                        <div class="carousel-item-b swiper-slide">
+                            <div class="card-box-a card-shadow">
+                                <div class="img-box-a">
+                                    <img src="assets/img/property-3.jpeg" alt="" class="img-a img-fluid">
+                                </div>
+                                <div class="card-overlay">
+                                    <div class="card-overlay-a-content">
+                                        <div class="card-header-a">
+                                            <h2 class="card-title-a">
+                                                <a th:href="@{/Index}">
+                                                    245 Azabu
+                                                    <br /> Nishi let
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div class="card-body-a">
+                                            <div class="price-box d-flex">
+                                                <span class="price-a">Comprar ahora | $ 120.00</span>
+                                            </div>
+                                            <a th:href="@{/Index}" class="link-a">
+                                                Click aqui para ver
+                                                <span class="bi bi-chevron-right"></span>
+                                            </a>
+                                        </div>
+                                        <div class="card-footer-a">
+                                            <ul class="card-info d-flex justify-content-around">
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span class=" fw-bold">Tallas</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>23</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>24</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>25</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>26</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End carousel item -->
+
+                        <div class="carousel-item-b swiper-slide">
+                            <div class="card-box-a card-shadow">
+                                <div class="img-box-a">
+                                    <img src="assets/img/property-4.jpeg" alt="" class="img-a img-fluid">
+                                </div>
+                                <div class="card-overlay">
+                                    <div class="card-overlay-a-content">
+                                        <div class="card-header-a">
+                                            <h2 class="card-title-a">
+                                                <a th:href="@{/Index}">
+                                                    204 Montal
+                                                    <br /> South Bela Two
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div class="card-body-a">
+                                            <div class="price-box d-flex">
+                                                <span class="price-a">Comprar ahora | $ 120.00</span>
+                                            </div>
+                                            <a th:href="@{/Index}" class="link-a">
+                                                Click aqui para ver
+                                                <span class="bi bi-chevron-right"></span>
+                                            </a>
+                                        </div>
+                                        <div class="card-footer-a">
+                                            <ul class="card-info d-flex justify-content-around">
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span class=" fw-bold">Tallas</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>23</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>24</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>25</span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title"></h4>
+                                                    <span>26</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="propery-carousel-pagination carousel-pagination"></div>
+
+            </div>
+        </section>
+
+
+    </main><!-- End #main -->
+ 
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    
+    <!-- Vendor JS Files -->
+    <script type="text/javascript" th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{/vendor/swiper/swiper-bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{/vendor/php-email-form/validate.js}"></script>
+
+    <!-- Template Main JS File -->
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: 'http://localhost:8080/users/currentUser',
+                type: 'GET',  
+                success: function(user) {
+                    // $('#welcomeMessage').text('Bienvenido, ' + user.name);
+                },
+                error: function() {
+                    // $('#welcomeMessage').text('No estás autenticado');
+                }
+            });
+        });
+        alert(`${user.name}`);
+    </script>
+</body>
+
+</html>

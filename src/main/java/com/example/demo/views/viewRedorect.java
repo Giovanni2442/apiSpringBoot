@@ -17,19 +17,25 @@ public class viewRedorect {
         return "form";
     }
 
-    @GetMapping("pr")
-    public String pr(){
-        return "jijija";
+    @GetMapping("jeje")
+    public String jeje(){
+        return "jeje";
     }
 
-    @GetMapping("Index")
+    @GetMapping("/Carrito")
+    public String carrito(){
+        return "productos/Carrito";
+    }
+
+    //Productos
+    @GetMapping("/Index")
     public String index(){
-        return "Index";
+        return "productos/Index";
     }
 
-    @GetMapping("Pruebas")
+    @GetMapping("/Prueba")
     public String pruebas(){
-        return "Pruebas";
+        return "productos/prueba";
     }
 
     /*only RestController

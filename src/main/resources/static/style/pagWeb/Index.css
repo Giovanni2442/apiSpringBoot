@@ -1,13 +1,103 @@
+.btn-pru{
+    /*border: 1px solid red;*/
+    width: 2rem;
+    height: 2rem;
+}
+
+
 body{
-    padding: 1px;
+    padding: 10px;
 }
 
 main{
     margin: 5px;
 }
 
-.cnt-cards{
+/*--Barra de Navegación--*/
+.carr-icon{
+    /*border: 1px solid red;*/
+    width: 2rem;
+    height: 2rem;
+}
+    .carr-icon img{
+        height: 100%;
+    }
+
+.cnt-numElmnts{
+    width: 20px;
+    height: 20px;
+    background-color: #da3a3a;
+    position: absolute;
+    right: -1px;
+    top: 29px;
+    border-radius: 50%;
+}
+    .cnt-numElmnts p{
+        position: absolute;
+        top: -2px;
+        right: 6px;
+        color: white;
+        margin: 0px;
+    }
+
+    .showCnt{
+        visibility: hidden;
+    }
+
+/* --- filtro ---*/
+.filterCard{
+    display: none;
+}
+
+
+        /*--NavBar--*/
+
+/*Navbar*/
+.container-fluid{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 8px 1px rgb(44 150 170 / 54%);
+}
+
+.linkCar{
     border: 1px solid red;
+}
+
+/*Logotipo*/
+.link{
+    /*border: 1px solid red;*/
+    display: inline-block;
+    text-decoration: none;
+}
+.figureNav{
+    width: 2rem;
+    height: 2rem;
+}
+    /*imagen*/
+    #imgNav{
+        width: 80px;
+        height: auto;
+    }
+
+/* --- ETIQUETA DE DESCUENTO ---*/
+.etiquetaProm{
+    font-size: large;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 230px;
+    height: 27px;
+    background-color: #da3a3a;
+    position: absolute;
+    right: -10px;
+    top: -4px;
+    /* border-radius: 50%;
+    /*border-radius: 50%;*/
+    
+}
+
+/* --- TARJETAS DISEÑO --- */
+.cnt-cards{
+   /* border: 1px solid red;*/
     padding: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -19,7 +109,7 @@ main{
 .tmplCard{
     width: 20rem;
     height: 32.4rem;
-    display: flex;
+    /*display: flex;*/
     /* height: 5rem; */
     position: relative;
     padding: 10px;
@@ -27,19 +117,18 @@ main{
     margin: 10px;
     flex-direction: column;
     align-items: center;
-    box-shadow: 2px 2px 8px 1px rgb(0 0 0 / 54%);
+    box-shadow: 5px 4px 11px 0px rgb(0 0 0 / 54%);
     transition: all .3s ease-in-out;
 }
 
-    .card h2{
+    .cardCnt h2{
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        border-bottom: 2px solid black;
         position: absolute;
         z-index: -1;
         bottom: 30%;
     }
 
-    .card:hover{
+    .cardCnt:hover{
         transform: scale(0.99);
     }
 
@@ -50,7 +139,7 @@ main{
         padding: 3px;
         border-radius: 5px;
         z-index: -1;
-        background-color: rgb(49 74 68 / 25%);
+        /*background-color: rgb(49 74 68 / 25%);*/
     }
 
     .figCard{
@@ -62,8 +151,7 @@ main{
     }
 
     .pru{
-        border: 1px solid red;
-        background-color: rgba(88, 167, 167, 0.471);
+        /*background-color: rgba(88, 167, 167, 0.471);*/
         width: 90%;
         height: 31.7rem;
         position: absolute;
@@ -75,14 +163,15 @@ main{
 
     /*figcaption card content*/
     #crd-precio{
-        border: 1px solid red;
+        /*border: 1px solid red;*/
         font-size: x-large;
         position: absolute;
         z-index: -1;
         font-family: sans-serif;
     } 
     #crd-buttn{
-        background-color: #ff2c2c;
+        background-color: #000000;
+        color: white;
         width: 100%;
         height: 40px;
         position: absolute;
@@ -97,15 +186,14 @@ main{
     #crd-buttn:hover{
         transform: scale(1.1);
         /*box-shadow: 0px 4px 20px ;*/
-        color: rgb(207, 207, 62);
+        color: rgb(89, 207, 62);
     }
 
 /*---Estilos Modal---*/
 
-.modal{
-    border: 1px solid red;
+.modalCnt{
     height: 20rem;
-    background: #7fffd4;
+    background: #fffffff0;
     margin-top: 5px;
     padding: 10px;
     position: fixed;
@@ -122,11 +210,16 @@ main{
 }
 
 .cnt-modal{
-    border: 1px solid green;
+    /*border: 1px solid green;*/
+    box-shadow: 0px 2px 16px 6px rgba(0, 0, 0, 0.5);
     /*width: 90%;*/
     /*height: 90%;*/
     display: flex;
     
+}
+
+.carousel-indicators [data-bs-target]{
+    background-color: black;
 }
 
 @media (max-width: 768px) {
@@ -145,31 +238,32 @@ main{
 
     /*left content*/
 .left-cnt-imgs{
-    border: 3px solid blue;
+    /*border: 3px solid blue;*/
     /*width: 50%;*/
+    padding: 10px;
     flex: 1.3;
 }
 
 .left-cnt-imgs > *{
-    margin: 5px;
+    margin: 0px;
 }
 
     /*Contenido galeria de Imagenes*/
     .left-imgs-glry{
-        border: 1px solid red;
+        border-bottom: 1px solid #cccccc;
         display: flex;
     }
 
         .Imgs-glry{
-            border: 1px solid red; 
-            margin: 5px;  
-            width: 50%;  
+            /*border: 1px solid red; */
+            margin: 0px;  
+            width: 52%;  
         }
 
             .Imgs-glry div{
-                border: 3px solid rgb(255, 0, 217);
+                border-bottom: 1px solid rgb(26 39 37 / 28%);
                 /*height: 30px;*/
-                margin: 5px;
+                margin: 0px;
                 display: flex;
                 justify-content: center;
             }
@@ -179,74 +273,95 @@ main{
             }
 
         .Img-main{
-            border: 1px solid red;
+           /* border: 1px solid red;*/
             /*height: 20rem;*/ 
-            margin: 5px;
+            /*margin: 5px;*/
             width: 75%;
         }
 
         #left-Img-main{
             height: 100%;
             width: 100%;
+            border-left: 2px solid #e2e2e2;
         }
 
     .info{
-        border: 1px solid red;
+        /*border: 1px solid red;*/
     }
 
         #left-name{           /*estilo nombre prduct*/
-            border: 1px solid rgb(128, 0, 0);
+            /*border: 1px solid rgb(128, 0, 0);*/
             width: 100%;
-            height: 40px;
+            font-family: sans-serif;
+            font-size: xxx-large;
+            /*height: 40px;*/
         }
 
         #lft-leyend{
-            border: 1px solid rgb(128, 0, 0);
+            border-bottom: 1px solid rgb(194 194 194);
             width: 100%;
             /*height: 40px;*/
         }
+            #leyend-tittle{
+                font-family: sans-serif;
+                font-size: x-large;
+            }
 
         #lft-Dtls{
-            border: 1px solid rgb(128, 0, 0);
+            /*border: 1px solid rgb(128, 0, 0);*/
             width: 100%;
             /*height: 40px;*/
         }
+            #details-tittle{
+                font-family: sans-serif;
+                font-size: x-large;
+            }
+
+            #dtl-li{
+                font-style: italic;
+                font-family: monospace;
+                font-size: larger;
+            }
 
     /*right content*/
 .right-cnt-prdct{
-    border: 3px solid blue;
+    /*border: 3px solid blue;*/
     /*width: 50%;*/
     flex: 1;
 }
     .right-cnt-prdct{
-        border: 3px solid rgb(196, 15, 18);
+        border-left: 1px solid rgb(210 210 210);
         margin: 3px;
         padding: 3px;
     }
         /*Contenedores del Modal Derecho*/
         .rght-cnt-1{    /*Nombre y Producto*/
-            border: 1px solid red;
+            /*border: 1px solid red;*/
             padding: 5px;
         }
 
             .rght-cnt-1 h2{
-                border: 1px solid rgb(196, 15, 18);
+                /*border: 1px solid rgb(196, 15, 18);*/
                 /*height: 5px;*/
+                font-size: xx-large;
+                font-family: sans-serif;
             }
 
             .rght-cnt-1 h3{
-                border: 1px solid rgb(196, 15, 18);
+                /*border: 1px solid rgb(196, 15, 18);*/
                 /*height: 5px;*/
+                font-size: x-large;
+                font-family: sans-serif;
             }
         
         .rght-cnt-2{
-            border: 1px solid red;
+            /*border: 1px solid red;*/
             /*height: 5rem;*/
             padding: 2px;
             margin-top: 5px;
         }
             .Tallas{
-                border: 1px solid rgb(8, 0, 255);
+                border: 1px solid rgb(212 212 212);
                 display: grid;
                 padding: 5px;
                 grid-template-columns: repeat(2, 1fr);
@@ -256,20 +371,145 @@ main{
             }
 
             .Tallas div{
-                border: 1px solid rgb(255, 115, 0);
+                box-shadow: 0px 5px 9px 0px rgba(0, 0, 0, 0.5);
+                width: 45%;
+                text-align: center;
+                padding: 10%;
+                transition: all .3s ease-in-out;
             }
 
+            .Tallas div:hover{
+                transform: scale(1.20);
+            }
+
+                #talls-tittle{
+                    font-size: x-large;
+                    font-family: sans-serif;
+                }
+
         .rght-cnt-3{
-            border: 1px solid red;
-            height: 5rem;
+            border-bottom: 1px solid #9f9f9f;
+            /*height: 5rem;*/
+            padding: 2px;
             margin-top: 5px;
         }
 
+            .Colors{
+                display: flex;
+                padding: 5px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
+                /* height: 20px; */
+                justify-items: center;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            .Colors div{
+                width: 50px;
+                height: 45px;
+                border-radius: 50%;
+                justify-content: center;
+                transition: all .3s ease-in-out;
+            }
+
+            .Colors div:hover{
+                transform: scale(1.20);
+            }
+
+                #color-tittle{
+                    font-size: x-large;
+                    font-family: sans-serif;
+                }
+
         .rght-cnt-4{
-            border: 1px solid red;
-            height: 5rem;
+            border-bottom: 1px solid #dedede;
+            padding: 5px;
             margin-top: 5px;
         }
+
+            /*Cantidades disponible por compra*/
+            .addCar{
+                display: flex;
+                justify-content: center;
+                margin: 5px;
+            }
+
+            .btn-carrito{
+                margin-left: 25px;
+                padding: 20px;
+                color: white;
+                font-size: large;
+                font-family: system-ui;
+                /* border: 1px solid red; */
+                background: radial-gradient(#ff2828, #da3a3a);
+                transition: all .3s ease-in-out;
+            }
+                .btn-carrito:hover{
+                    transform: scale(1.20);
+                    color: yellow;
+                }
+
+            #cant-tittle{
+                font-size: x-large;
+                font-family: sans-serif;
+            }
+
+            .fmr-cant{
+                /*border: 1px solid red;*/
+                display: flex;
+            }
+
+        .rght-cnt-5{
+            /*border: 1px solid red;*/
+            padding: 5px;
+            display: grid;
+            padding: 5px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            /* height: 20px; */
+            justify-items: center
+        }
+            .rght-cnt-5 div{
+            }
+
+            .rght-cnt-5 img{
+                width: 3rem;
+                height: 3rem;
+                /*border: 1px solid red;*/
+            }
+
+            /*..id..*/
+            #encabezado{
+                margin: 0px;
+                margin-left: 20px;
+                font-family: sans-serif;
+            }
+
+            #cnt-img{
+                /*border: 1px solid red;*/
+                display: flex;
+                align-content: center;
+                align-items: center;
+            }
+
+            .descr{
+                /*border: 1px solid red;*/
+            }
+                #txt-descr{
+                    margin: 0px;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    margin-left: 4rem;
+                }
+
+        
+            
+
+                
+
+            
+
         
 
     

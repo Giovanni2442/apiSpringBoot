@@ -1,0 +1,42 @@
+/*Estilos para el modal del carrito*/
+
+.mdlCar-msgAdd{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.mdlCar{
+    /*border: 1px solid red;*/
+}
+.mdlCar *{
+    margin: 5px;
+}
+
+    .mdlCarImg{
+        /*border: 1px solid red;*/
+        display: flex;
+    }
+       .cntImg{
+            border-right: 1px solid rgb(123 123 123);            width: 50%;
+            padding: 5px;
+            flex: 1.4;
+        }
+            #mdlCar-Img{
+                /*border: 1px solid red;*/
+                width: 100%;
+                margin: 0px;
+                height: 100%;
+            }
+    .mdlCar-Dtls{
+        /*border: 1px solid red;*/
+        flex: 1.2;
+    }
+        .mdlCar-Dtls p{
+            /*border: 1px solid green;*/
+            font-size: x-large;
+            font-family: system-ui;
+            text-align: justify;
+        }
+     
+
+
+

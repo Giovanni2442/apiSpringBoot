@@ -1,0 +1,58 @@
+
+body{
+    padding: 2rem;
+}
+
+        /*--NavBar--*/
+
+/*Navbar*/
+.container-fluid{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 8px 1px rgb(44 150 170 / 54%);
+}
+
+/*Logotipo*/
+
+.link{
+    border: 1px solid red;
+    display: inline-block;
+    text-decoration: none;
+}
+.figureNav{
+    width: 2rem;
+    height: 2rem;
+}
+    /*imagen*/
+    #imgNav{
+        width: 80px;
+        height: auto;
+    }
+
+    /*Tabla*/
+
+.tr-prdct{
+    background-color: rgb(152, 156, 159);
+}
+p{
+    margin: 0px;
+}
+
+/*imagenes*/
+#td-img{
+    width: 0px;
+    height: auto;
+}
+    #td-img img{
+        width: 100px;
+        height: auto;
+    }
+
+/*eliminar*/
+#td-delete{
+    width: 0px;
+    height: auto;
+}
+    #td-delete img{
+        width: 40px;
+        height: auto;
+    }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!--BOOTSTRAP-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" type="text/css" th:href="@{/style/pagWeb/Carrito.css}">
+  <title>Carrito</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Archivos de Bootstrap -->
+  <link th:href="@{/vendor/animate.css/animate.min.css}" rel="stylesheet">
+  <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+
+  <!-- Estilos CSS -->
+  <link th:href="@{/style/style.css}" rel="stylesheet">
+</head>
+
+<body>
+  <div th:replace="~{fragments/header :: header}"></div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center">
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody class="cnt-prdcts">
+      <!--<tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>-->
+    </tbody>
+  </table>
+
+  <a class="mb-3 btn btn-success" th:href="@{/confirmar}">Confirmar</a>
+</div>
+  <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+
+<!--JS-->
+<script th:src="@{/js/pagWeb/Carrito.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script
+  src="https://www.paypal.com/sdk/js?client-id=AS22hxDcl3Kqv6H5OBPRLJ7_Qmer2KPrlvMXtg7CCBzFMjvLvMy7Xqq9DHZ_1InNcGvYvqp6AjrUSb1F&currency=MXN"></script>
+<script type="text/javascript" th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/swiper/swiper-bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/php-email-form/validate.js}"></script>
+
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+</html>

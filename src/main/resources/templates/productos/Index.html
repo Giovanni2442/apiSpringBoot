@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet"  type="text/css" href="style/pagWeb/modalCarr.css">
+    <link rel="stylesheet"  type="text/css" href="style/pagWeb/Index.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="link" href="/Index">
+                    <!--<figure class="figureNav">-->
+                        <img id="imgNav" src="assets/logo/logo.jpeg" alt="">
+                    <!--</figure>-->
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                      <li class="nav-item">
+                        <a class="nav-link active" id="HOME" aria-current="page" href="/home">HOME</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link active" id="HOMBRE" aria-current="page" href="#">HOMBRE</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" id="MUJER" href="#">MUJER</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" id="PROMO" href="#">PROMOCIÓNES</a>
+                      </li>
+
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            MARCA
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" id="MARCA 1" href="#">MARIELA</a></li>
+                          <li><a class="dropdown-item" id="MARCA 2" href="#">FLEXI</a></li>
+                          <li><a class="dropdown-item" id="MARCA 3" href="#">VERSACE</a></li>
+                        </ul>
+                      </li>
+
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            MATERIAL
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" id="MATERIAL 1" href="#">CUERO</a></li>
+                          <li><a class="dropdown-item" id="MATERIAL 2" href="#">CAUCHO</a></li>
+                          <li><a class="dropdown-item" id="MATERIAL 3" href="#">PLASTICO</a></li>
+                          <li><a class="dropdown-item" id="MATERIAL 4" href="#">CORCHO</a></li>
+                        </ul>
+                      </li>
+
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            COLOR
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" id="COLOR 1" href="#"> VERDE</a></li>
+                          <li><a class="dropdown-item" id="COLOR 2 " href="#">AZUL</a></li>
+                          <li><a class="dropdown-item" id="COLOR 3" href="#">ROSA</a></li>
+                          <li><a class="dropdown-item" id="COLOR 4" href="#">BLANCO </a></li>
+                          <li><a class="dropdown-item" id="COLOR 5" href="#">NEGRO</a></li>
+                        </ul>
+                      </li>
+
+                    </ul>
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" id="buscador" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                    <div class="carr-icon">
+                        <a href="/Carrito">
+                          <div class="cnt-numElmnts"></div>
+                          <img src="assets/Simbolos/car.png" alt="">
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </header>
+
+        <!--Show cards-->
+        <article class="cnt-cards"></article>
+
+        <!--modal click description of each cards-->
+        <section class="modalCnt">
+            <button class="btn-close"></button>
+            <article class="cnt-modal">
+                <template id="tmpl_mdl">                              <!--plantilla del modal-->
+                    <!--left content images-->
+                    <div class="left-cnt-imgs">  
+                        
+                        <!--Galeria de Imagenes del Producto-->
+                        <div class="left-imgs-glry">                          <!--Conjunto de imagenes del producto-->
+                           
+                            <!--tres imagnes-->
+                            <div class="Imgs-glry">              
+                                <div>
+                                    <img id="left-Img-1"/>
+                                </div>
+                                <div>
+                                    <img id="left-Img-2"/>
+                                </div>
+                                <div>
+                                    <img id="left-Img-3"/>
+                                </div>
+                            </div>
+
+                            <!--Contenido Imagen Principal-->
+                            <div class="Img-main">                <!--Contenido de la Imagen Principal del Producto-->
+                                <!--<img id="left-Img-main"/>-->
+
+                                <div id="carouselExampleIndicators" class="carousel slide">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img id="carru-img-1" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img id="carru-img-2" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img id="carru-img-3" class="d-block w-100" alt="...">
+                                </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="info">
+                            <h2 id="left-name"></h2>                <!--titulo del producto-->
+                            <div id="lft-leyend"></div>      <!--Leyenda descriptiva del producto-->
+                            <div id="lft-Dtls"></div>        <!--Listado de Detalles del Producto-->
+                        </div>
+                       
+                    </div>                               <!--contenido de lado izq imagenes-->
+                        
+                    <!--right content product-->
+                    <div class="right-cnt-prdct">              <!--contenido de lado derecho cnt del producto-->        
+                        <div class="rght-cnt-1">
+                            <!--<h2></h2>-->  <!--name product-->
+                            <!--<p></p>-->    <!--price product-->
+                        </div>
+                        
+                        <div class="rght-cnt-2"></div> <!--Tallas product-->
+                        <div class="rght-cnt-3"></div> <!--Cantidad/ add carrito-->
+                        <div class="rght-cnt-4">
+                            <!--Botton modal para agregar el producto al carrito-->
+                                <div class="cnt-add-carrito">
+                                <button id="btn-add-car">ADD CARRITO!</button>
+                            </div>
+                        </div> <!--Publicidad-->
+
+                        <div class="rght-cnt-5">  
+                            <!--Elementos-->    
+                        </div>
+                    </div> 
+                </template>
+            </article>
+        </section>
+
+        <!--<a href="Carrito.html"></a>--->
+        <!--Template de cartas-->
+        <template id="template">  
+            <figure class="cardCnt">
+                <div class="cnt-elmnts">
+                    <div class="jeje"></div>
+                    <img/>
+                    <h2></h2>
+                    <figcaption></figcaption>
+                </div>
+            </figure>
+        </template>
+    </main>
+</body>
+
+<!--BOOTSTRAP JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script src="js/pagWeb/Index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>

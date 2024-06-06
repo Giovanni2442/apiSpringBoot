@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--TIPOGRAFIAS DE GOOGLE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!--ICONOS-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="assets/img/favicon.png" rel="icon">
+    <!--CSS-->
+    <link th:href="@{/style/login.css}" rel="stylesheet">
+    <title>Mariela</title>
+</head>
+<body>
+
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <a><img src="assets/logo/logob.png" alt="" class="img-fluid"></a>
+                <h3>Bienvenido a </h3>
+                <h3>Mariela SHOES</h3>
+                <p>Ya tienes una cuenta <br> Inicia Sesión </p>
+                <input type="button" value="Iniciar Sesion" id="sign-in">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Crear una Cuenta</h2>
+                <br>
+                <p>Llena los siguientes datos para registrar</p>
+                <form class="form" id="signup-form">
+                    <label>
+                        <i class='bx bx-user'></i>
+                        <input type="text" placeholder="Nombre(s)" id="nombre">
+                    </label>
+                    <label>
+                        <!-- <i class='bx bx-user'></i> -->
+                        <input type="text" placeholder="Apellido Paterno" id="lstnF">
+                        <input type="text" placeholder="Apellido Materno" id="lstnM">
+                    </label>
+                    <label>
+                        <i class='bx bx-calendar'></i>
+                        <input type="number" placeholder="Edad" id="age">
+                        <i class='bx bx-phone'></i>
+                        <input type="tel" placeholder=" Telefono" id="tel">
+                    </label>
+                    <label>
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" placeholder="Correo Electronico" id="email">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" placeholder="Contrasena" id="pass">
+                    </label>
+                    <button type="submit" onclick="submitForm()">Registrar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-form login hide">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido nuevamente!!</h2>
+                <p>Para unirte a nuestra comunidad por favor Inicia Sesion con tus datos</p>
+                <input type="button" value="Registrarse" id="sign-up">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <a><img src="assets/logo/logob.png" alt="" class="img-fluid"></a>
+                <h2>Iniciar Sesion</h2>
+                <br>
+                <p>Iniciar Sesion con una cuenta</p>
+                <form class="form" id="signin-form">
+                    <label>
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" placeholder="correo electronico" id="login-email">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" placeholder="contrasena" id="login-pass">
+                    </label>
+                    <button type="button" onclick="login()">Iniciar sesión</button>
+                </form>
+            </div>
+        </div>
+    </div>    
+</body>
+
+<!--MIS SCRIPTS-->
+<script type="text/javascript" th:src="@{/js/login.js}"></script>
+<script type="text/javascript" th:src="@{/js/agregarUsuarios.js}"></script>
+</html>

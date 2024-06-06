@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Producto</title>
+
+    <!-- Favicons -->
+    <link href="/../../assets/img/favicon.png" rel="icon">
+    <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Archivos de Bootstrap -->
+    <link th:href="@{/vendor/animate.css/animate.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{/vendor/swiper/swiper-bundle.min.css}" rel="stylesheet">
+
+    <!-- Estilos CSS -->
+    <link th:href="@{/style/style.css}" rel="stylesheet">
+</head>
+
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+
+    <div class="mt-4">
+        <h1 class="mb-4 text-center pt-2" id="nombre-producto">Alta de producto</h1>
+
+        <div class="container my-3 d-flex flex-column justify-content-center align-items-center">
+            <h4 class="text-center mb-3">Imágenes:</h3>
+            <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center gap-3 mb-5">
+                <div class="d-flex flex-column gap-3 align-items-center">
+                    <!-- src="/../assets/img/calzado9.jpeg" -->
+                    <img class="img-thumbnail" 
+                        style="height:100px;width:100px;min-height:50px;min-width:50px;">
+                    <input type="file" id="img1">
+                </div>
+                <div class="d-flex flex-column gap-3 align-items-center">
+                    <img class="img-thumbnail"
+                        style="height:100px;width:100px;min-height:50px;min-width:50px;">
+                    <input type="file" id="img2">
+                </div>
+                <div class="d-flex flex-column gap-3 align-items-center">
+                    <img class="img-thumbnail" 
+                        style="height:100px;width:100px;min-height:50px;min-width:50px;">
+                    <input type="file" id="img3">
+                </div>
+            </div>
+            <h4 class="text-center mb-3">Detalles:</h3>
+            <div class="d-flex flex-md-row flex-column gap-5">
+                <div class="d-flex flex-column gap-2 align-items-end">
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-producto" class="form-label fw-bold" style="width:8ch;">ID</label>
+                        <input id="id-num" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 mb-4 align-items-end">
+                        <label for="id-producto" class="form-label fw-bold" style="width:8ch;">Nombre</label>
+                        <input id="id-producto" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-cantidad" class="form-label fw-bold" style="width:8ch;">Cantidad</label>
+                        <input id="id-cantidad" type="number" min="0" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-precio" class="form-label fw-bold" style="width:8ch;">Precio</label>
+                        <input id="id-precio" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-categoria" class="form-label fw-bold" style="width:8ch;">Categoria</label>
+                        <input id="id-categoria" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-leyenda" class="form-label fw-bold" style="width:8ch;">Leyenda</label>
+                        <input id="id-leyenda" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 mb-4 align-items-end">
+                        <label for="id-genero" class="form-label fw-bold" style="width:8ch;">Género</label>
+                        <input id="id-genero" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-size1" class="form-label fw-bold" style="width:8ch;">Tamaño 1</label>
+                        <input id="id-size1" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-2 align-items-center">
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-size2" class="form-label fw-bold" style="width:9ch;">Tamaño 2</label>
+                        <input id="id-size2" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end mb-4">
+                        <label for="id-size3" class="form-label fw-bold" style="width:9ch;">Tamaño 3</label>
+                        <input id="id-size3" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-color1" class="form-label fw-bold" style="width:9ch;">Color 1</label>
+                        <input id="id-color1" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-color2" class="form-label fw-bold" style="width:9ch;">Color 2</label>
+                        <input id="id-color2" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 mb-3 align-items-end">
+                        <label for="id-color3" class="form-label fw-bold" style="width:9ch;">Color 3</label>
+                        <input id="id-color3" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-detalle1" class="form-label fw-bold" style="width:9ch;">Detalle 1</label>
+                        <input id="id-detalle1" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-color2" class="form-label fw-bold" style="width:9ch;">Detalle 2</label>
+                        <input id="id-detalle2" type="text" class="form-control">
+                    </div>
+                    <div class="input-group gap-2 align-items-end">
+                        <label for="id-color3" class="form-label fw-bold" style="width:9ch;">Detalle 3</label>
+                        <input id="id-detalle3" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success mt-4 px-5 fw-bold" id="btn-enviar-nuevo">Enviar</button>
+        </div>
+    </div>
+
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <script type="text/javascript" th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{/vendor/swiper/swiper-bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{/vendor/php-email-form/validate.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+    <script type="text/javascript" th:src="@{/js/almacenNuevo.js}"></script>
+
+</body>
+
+</html>

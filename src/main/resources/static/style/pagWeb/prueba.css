@@ -1,0 +1,99 @@
+body{
+    border: 1px solid rebeccapurple;
+    /*padding: 5rem;*/
+}
+
+
+/* --- Tarjetas ---*/
+    /*Contenedor de tarjetas*/
+.cnt-cards{
+    border: 1px solid red;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+    /* --- Style js ---*/
+.tmplCard{
+    width: 20rem;
+    height: 32.4rem;
+    /*display: flex;*/
+    /* height: 5rem; */
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 4px 11px 0px rgb(0 0 0 / 54%);
+    transition: all .3s ease-in-out;
+}
+
+    .cardCnt h2{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        position: absolute;
+        z-index: -1;
+        bottom: 30%;
+    }
+
+    .cardCnt:hover{
+        transform: scale(0.99);
+    }
+
+    .imgCard{
+        width: 95%;
+        height: 50%;
+        position: absolute;
+        padding: 3px;
+        border-radius: 5px;
+        z-index: -1;
+        /*background-color: rgb(49 74 68 / 25%);*/
+    }
+
+    .figCard{
+        position: absolute;
+        bottom: 30px;
+        width: 90%;
+        height: 7.3rem;
+        margin: 10px;
+    }
+
+    .pru{
+        /*background-color: rgba(88, 167, 167, 0.471);*/
+        width: 90%;
+        height: 31.7rem;
+        position: absolute;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*figcaption card content*/
+    #crd-precio{
+        /*border: 1px solid red;*/
+        font-size: x-large;
+        position: absolute;
+        z-index: -1;
+        font-family: sans-serif;
+    } 
+    #crd-buttn{
+        background-color: #000000;
+        color: white;
+        width: 100%;
+        height: 40px;
+        position: absolute;
+        bottom: 0px;
+        font-size: large;
+        font-family: sans-serif;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        border: none;
+    }
+
+    #crd-buttn:hover{
+        transform: scale(1.1);
+        /*box-shadow: 0px 4px 20px ;*/
+        color: rgb(89, 207, 62);
+    }
