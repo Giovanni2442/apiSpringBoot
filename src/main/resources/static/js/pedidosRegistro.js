@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const urlCarrito = 'http://127.0.0.1:8080/Carrito/';
-    const urlDireccion = 'http://127.0.0.1:8003/direccion/crear/';
+    const urlDireccion = '  http://127.0.0.1:8003/direccion/crear/';
     const urlMostrarDireccion = 'http://127.0.0.1:8002/direccion/mostrar-todas/';
     const urlPedidos = 'http://127.0.0.1:8003/pedidos/crear/';
-
+ 
     const idCliente = 2;
     const pais = document.getElementById("pais");
     const estado = document.getElementById("estado");
